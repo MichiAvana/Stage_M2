@@ -28,7 +28,6 @@ for errorB=1:10
     B = [-1/2 -1/2 ; 1/2 1/2];
     C = [1/dx -1/dx ; -1/dx  1/dx];
 
-
     EspecF = sparse(nv,K);
     for j=1:K
         M = zeros(N,N);
@@ -51,7 +50,6 @@ for errorB=1:10
     %figure()
     %plot(k,sort((EspecF(1:nv,:)))),title('finite element')
 
-
     %exact solution
     if mod(nv,2) == 0
         Niter = (nv/2)-1 ;
@@ -62,7 +60,6 @@ for errorB=1:10
         n+Niter+1;
         E(n+Niter+1,:)= (k.^2 + 4.0*n^2*pi^2 - 4.0*k*n*pi)/2.0;
     end 
-
 
     %finite differences 
     EspecL = sparse(N,K);
@@ -106,11 +103,9 @@ EspecL = sort(EspecL);
 E = sort(E);
 EspecF = sort(EspecF);
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CALCUL DES ERREURS 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 %%%%% POUR K=[0,2PI] ET 1ER VALEUR PROPRES %%%%%
 errRel = abs( (EspecF(5,:) - E(5,:) )./ E(5,:))
@@ -119,12 +114,10 @@ legend('Exact sol','Elements finis','Location','northeast')
 xlabel('k')
 ylabel('E_5')
 
-
 figure()
 plot(k,errRel),title('E_5, N=1000')
 xlabel('k')
 ylabel('errors')
-
 
 %%%%% pour tout k=[0, 2pi] pour tout N avec nv=1er %%%%%%
 figure()
