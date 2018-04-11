@@ -11,7 +11,7 @@ ind=[]
 indice = [100:100:1000];
 
 for errorB=1:10    
-    dx = 1/(N-1);
+    dx = 1/(N);
     ind = [ind dx];
 
     %number of eigen values
